@@ -1,0 +1,47 @@
+<!-- in this code we will learn how to add edit and remove elements in DOM -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code</title>
+</head>
+<body>
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+
+    // below is the code to add the list items in an ul with class =language  i.e in line 9
+    function addlanguage(langname){
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(li)
+ 
+    } 
+
+    addlanguage('cpp')
+    addlanguage('python')
+    addlanguage('rust')
+
+    // edit
+    const secondlang=document.querySelector("li:nth-child(2)")
+    console.log(secondlang);
+    // secondlang.innerHTML="mojo"
+    const newli=document.createElement('li')
+    newli.textContent="mojo"
+    secondlang.replaceWith(newli)
+
+
+    // edit
+    const firstlang=document.querySelector("li:first-child")
+    firstlang.outerHTML='<li>typescript</li>'
+
+
+    // remove
+    const lastlang=document.querySelector("li:last-child")
+    lastlang.remove()
+    
+</script>
+</html>

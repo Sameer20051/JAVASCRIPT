@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<body style="background-color:gray; color: aliceblue;">
+    <h2>AMAZING IMAGES</h2>
+    <div>
+    <ul id="images">
+       <li><img width="200px" id="photoshop"  src="https://images.pexels.com/photos/4123588/pexels-photo-4123588.jpeg" alt="photoshop"></li>
+       
+        <li><img src="https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg" id="japan" width="200px"  alt=""></li>
+       
+        <li><img id="river" width="200px" src="https://images.pexels.com/photos/2131654/pexels-photo-2131654.jpeg" alt=""></li>
+       
+        <li><img src="https://images.pexels.com/photos/1526404/pexels-photo-1526404.jpeg" id="owl"   width="200px" alt=""></li>
+       
+        <li><a style="color: aliceblue;" id="google"  href="https://www.google.com/">google</a></li>
+    </ul>
+    </div>
+</body>
+<script>
+     
+
+    //  write a code such when click on any list item EXCEPT google , it gets removed
+    document.querySelector('#images').addEventListener('click', function(e){
+
+        if(e.target.tagName==='IMG'){
+             console.log(e.target.parentNode);
+
+        let rmv=e.target.parentNode;
+        rmv.remove();
+        }
+
+       
+        
+        
+
+    })
+
+</script>
+</html>

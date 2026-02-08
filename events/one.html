@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<body style="background-color:gray; color: aliceblue;">
+    <h2>AMAZING IMAGES</h2>
+    <div>
+    <ul id="images">
+       <li><img width="200px" id="photoshop"  src="https://images.pexels.com/photos/4123588/pexels-photo-4123588.jpeg" alt="photoshop"><li>
+       
+        <li><img src="https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg" id="japan" width="200px"  alt=""></li>
+       
+        <li><img id="river" width="200px" src="https://images.pexels.com/photos/2131654/pexels-photo-2131654.jpeg" alt=""></li>
+       
+        <li><img src="https://images.pexels.com/photos/1526404/pexels-photo-1526404.jpeg" id="owl"   width="200px" alt=""></li>
+       
+        <li><a style="color: aliceblue;" id="google"  href="https://www.google.com/">google</a></li>
+    </ul>
+    </div>
+</body>
+<script>
+    // bwlow is what we learn in the event
+    // event types,timestamp,default prevented
+    // target,currenttarget,srcelement,toelement
+    // clientx,clienty,screenx,screeny
+     
+    document.getElementById('images').addEventListener('click', function(e){
+        alert("clicked inside the ul");
+        // e.stopPropagation();
+        
+    },false )
+
+
+    document.getElementById('owl').addEventListener('click',function(e){
+        alert('owl is clicked');
+        e.stopPropagation()  //this stops  this evet to propagate up 
+    },false)
+
+    document.getElementById('google').addEventListener('click', function(e){
+        alert("google is clicked");
+        e.stopPropagation();
+        e.preventDefault()
+        
+    },false )
+// </script>
+</html>
